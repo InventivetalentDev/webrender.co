@@ -51,12 +51,12 @@ webrenderApp.controller("renderController", ["$scope", "$http", "$timeout", func
                 $scope.renderOptions = response.data;
                 $.each($scope.renderOptions, function (index, option) {
                     if (option.defaultValue) {
-                        if (option.defaultValue === true) {
-                            option.defaultValue = "true";
-                        }
-                        if (option.defaultValue === false) {
-                            option.defaultValue = "false";
-                        }
+                        // if (option.defaultValue === true) {
+                        //     option.defaultValue = "true";
+                        // }
+                        // if (option.defaultValue === false) {
+                        //     option.defaultValue = "false";
+                        // }
 
                         option.value = option.defaultValue;
                     }
@@ -78,13 +78,13 @@ webrenderApp.controller("renderController", ["$scope", "$http", "$timeout", func
                 options: (function () {
                     var options = {};
                     $.each($scope.renderOptions, function (index, option) {
-                        if (option.value) {
-                            if (option.value === "true")
-                                option.value = true;
-                            if (option.value === "false")
-                                option.value = false;
-                            options[option.key] = option.value;
-                        }
+                        // if (option.value) {
+                        //     if (option.value === "true")
+                        //         option.value = true;
+                        //     if (option.value === "false")
+                        //         option.value = false;
+                        options[option.key] = option.value;
+                        // }
                     });
                     return JSON.stringify(options);
                 })()

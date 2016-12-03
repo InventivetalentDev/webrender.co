@@ -51,10 +51,13 @@
                 <div ng-repeat="option in renderOptions">
                     <label for="optionValue-{{option.key}}">{{option.key}}</label>
                     <div ng-show="option.type == 'boolean'">
+                        <!--
                         <select class="form-control" id="optionValue-{{option.key}}" ng-model="option.value" ng-disabled="renderStarted">
                             <option value="true">true</option>
                             <option value="false">false</option>
                         </select>
+                        -->
+                        <input type="checkbox" id="optionValue-{{option.key}}" ng-model="option.value" ng-disabled="renderStarted">
                     </div>
                     <div ng-show="option.type != 'boolean'">
                         <input class="form-control" type="{{option.type}}" id="optionValue-{{option.key}}" ng-model="option.value" ng-disabled="renderStarted">
