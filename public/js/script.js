@@ -78,19 +78,7 @@ webrenderApp.controller("renderController", ["$scope", "$http", "$timeout", func
             data: $.param({
                 url: $scope.renderUrl,
                 format: $scope.renderFormat,
-                options: (function () {
-                    var options = {};
-                    $.each($scope.renderOptions, function (index, option) {
-                        // if (option.value) {
-                        //     if (option.value === "true")
-                        //         option.value = true;
-                        //     if (option.value === "false")
-                        //         option.value = false;
-                        options[option.key] = option.value;
-                        // }
-                    });
-                    return JSON.stringify(options);
-                })()
+                options: $scope.createOptionsString()
             }),
             headers: {"Content-Type": "application/x-www-form-urlencoded"}
         }).then(function (response) {
@@ -123,11 +111,24 @@ webrenderApp.controller("renderController", ["$scope", "$http", "$timeout", func
             }
         })
     };
+    $scope.createOptionsString = function () {
+        var options = {};
+        $.each($scope.renderOptions, function (index, option) {
+            // if (option.value) {
+            //     if (option.value === "true")
+            //         option.value = true;
+            //     if (option.value === "false")
+            //         option.value = false;
+            options[option.key] = option.value;
+            // }
+        });
+        return JSON.stringify(options);
+    };
     $scope.showDirectLink = function () {
         $scope.renderDirectLink = "https://webrender-api.inventivetalent.org/render"
             + "?url=" + $scope.renderUrl
             + "&format=" + $scope.renderFormat
-            + "&options=" + JSON.stringify($scope.renderOptions)
+            + "&options=" + $scope.createOptionsString()
             + "&redirect=true";
         $scope.renderDirectLinkVisible = true;
     };
