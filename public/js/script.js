@@ -42,6 +42,9 @@ webrenderApp.controller("renderController", ["$scope", "$http", "$timeout", func
     $scope.renderedImage = "";
     $scope.renderedData = "";
 
+    $scope.renderDirectLink = undefined;
+    $scope.renderDirectLinkVisible = false;
+
     $scope.initRenderOptions = function () {
         $http({
             url: apiBaseUrl + "/getoptions",
@@ -119,6 +122,14 @@ webrenderApp.controller("renderController", ["$scope", "$http", "$timeout", func
                 $scope.addAlert("Unknown Error", "danger", 10000);
             }
         })
+    };
+    $scope.showDirectLink = function () {
+        $scope.renderDirectLink = "https://webrender-api.inventivetalent.org/render"
+            + "?url=" + $scope.renderUrl
+            + "&format=" + $scope.renderFormat
+            + "&options=" + JSON.stringify($scope.renderOptions)
+            + "&redirect=true";
+        $scope.renderDirectLinkVisible = true;
     };
 
 

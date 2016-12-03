@@ -74,6 +74,9 @@
             <h2>Rendered</h2>
             <div class="pull-right">
                 <a href="#" ng-href="{{renderedImage}}" download="WebRender" target="_blank">Download Image</a> | <strong>Expiration:</strong> {{(renderedData.expiration*1000 | date : "medium")}}
+                <br/>
+                <a href="#" ng-click="showDirectLink()" ng-hide="renderDirectLink && renderDirectLinkVisible">Show direct link to render again</a>
+                <input class="form-control" readonly ng-show="renderDirectLink && renderDirectLinkVisible" ng-model="renderDirectLink">
             </div>
 
             <img ng-src="{{renderedImage}}" src="">
