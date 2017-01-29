@@ -8,7 +8,7 @@
 </head>
 <body>
 <div class="container-fluid">
-    <h1 class="page-header" onclick="window.location='https://web-render.inventivetalent.org'">WebRender
+    <h1 class="page-header" onclick="window.location='https://webrender.ga'">WebRender
         <small>Take screenshots of any website</small>
     </h1>
 

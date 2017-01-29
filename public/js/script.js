@@ -1,4 +1,4 @@
-var apiBaseUrl = "https://webrender-api.inventivetalent.org";
+var apiBaseUrl = "https://api.webrender.ga";
 
 var webrenderApp = angular.module("webrenderApp", ["ngRoute", "ui.bootstrap", "angular-loading-bar"]);
 
@@ -125,7 +125,7 @@ webrenderApp.controller("renderController", ["$scope", "$http", "$timeout", func
         return JSON.stringify(options);
     };
     $scope.showDirectLink = function () {
-        $scope.renderDirectLink = "https://webrender-api.inventivetalent.org/render"
+        $scope.renderDirectLink = apiBaseUrl + "/render"
             + "?url=" + $scope.renderUrl
             + "&format=" + $scope.renderFormat
             + "&options=" + $scope.createOptionsString()
