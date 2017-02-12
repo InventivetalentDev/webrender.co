@@ -6,7 +6,7 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="css/loading-bar.css" rel="stylesheet">
 </head>
-<body>
+<body ng-cloak>
 <div class="container-fluid">
     <h1 class="page-header" onclick="window.location='https://webrender.ga'">WebRender
         <small>Take screenshots of any website</small>
