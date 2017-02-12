@@ -128,7 +128,7 @@ webrenderApp.controller("renderController", ["$scope", "$http", "$timeout", func
         $scope.renderDirectLink = apiBaseUrl + "/render"
             + "?url=" + $scope.renderUrl
             + "&format=" + $scope.renderFormat
-            + "&options=" + $scope.createOptionsString()
+            // + "&options=" + $scope.createOptionsString()
             + "&redirect=true";
         $scope.renderDirectLinkVisible = true;
     };
