@@ -46,27 +46,27 @@ webrenderApp.controller("renderController", ["$scope", "$http", "$timeout", func
     $scope.renderDirectLinkVisible = false;
 
     $scope.initRenderOptions = function () {
-        $http({
-            url: apiBaseUrl + "/getoptions",
-            method: "GET"
-        }).then(function (response) {
-            $scope.safeApply(function () {
-                $scope.renderOptions = response.data;
-                $.each($scope.renderOptions, function (index, option) {
-                    if (option.defaultValue) {
-                        // if (option.defaultValue === true) {
-                        //     option.defaultValue = "true";
-                        // }
-                        // if (option.defaultValue === false) {
-                        //     option.defaultValue = "false";
-                        // }
-
-                        option.value = option.defaultValue;
-                    }
-                });
-                console.log($scope.renderOptions);
-            });
-        });
+        // $http({
+        //     url: apiBaseUrl + "/getoptions",
+        //     method: "GET"
+        // }).then(function (response) {
+        //     $scope.safeApply(function () {
+        //         $scope.renderOptions = response.data;
+        //         $.each($scope.renderOptions, function (index, option) {
+        //             if (option.defaultValue) {
+        //                 // if (option.defaultValue === true) {
+        //                 //     option.defaultValue = "true";
+        //                 // }
+        //                 // if (option.defaultValue === false) {
+        //                 //     option.defaultValue = "false";
+        //                 // }
+        //
+        //                 option.value = option.defaultValue;
+        //             }
+        //         });
+        //         console.log($scope.renderOptions);
+        //     });
+        // });
     };
     $scope.startRender = function () {
         var startAlert = $scope.addAlert("Rendering Website...", "info");
