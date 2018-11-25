@@ -105,8 +105,7 @@
     format: "png",
     selector: "html",
     hide: [],
-    width: 1920,
-    height: 1080,
+    sizes: "w3counter",
     scale: 1
 }
             </code>
