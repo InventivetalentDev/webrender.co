@@ -1,4 +1,4 @@
-var apiBaseUrl = "https://api.webrender.ga";
+var apiBaseUrl = "https://api.webrender.co";
 
 var webrenderApp = angular.module("webrenderApp", ["ngRoute", "ui.bootstrap", "angular-loading-bar"]);
 
@@ -76,9 +76,7 @@ webrenderApp.controller("renderController", ["$scope", "$http", "$timeout", func
             url: apiBaseUrl + "/render",
             method: "POST",
             data: $.param({
-                url: $scope.renderUrl,
-                format: $scope.renderFormat,
-                options: $scope.createOptionsString()
+                url: $scope.renderUrl
             }),
             headers: {"Content-Type": "application/x-www-form-urlencoded"}
         }).then(function (response) {
@@ -127,8 +125,6 @@ webrenderApp.controller("renderController", ["$scope", "$http", "$timeout", func
     $scope.showDirectLink = function () {
         $scope.renderDirectLink = apiBaseUrl + "/render"
             + "?url=" + $scope.renderUrl
-            + "&format=" + $scope.renderFormat
-            // + "&options=" + $scope.createOptionsString()
             + "&redirect=true";
         $scope.renderDirectLinkVisible = true;
     };

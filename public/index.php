@@ -26,6 +26,9 @@
             This website uses <a href="http://wkhtmltopdf.org/" target="_blank"><strong>WKhtmlTOpdf</strong></a> to take screenshots of any page you specify.<br/>
             Images are currently only stored for one hour, so please don't use direct links to this website.<br/>
             <br/>
+            There's also an <a href="#api">API</a>!
+            <br/>
+            <br/>
             This is free-to-use, please don't abuse it :-)
             <hr/>
         </div>
@@ -38,31 +41,31 @@
                     <label for="renderUrl">Website URL</label>
                     <input class="form-control" type="url" id="renderUrl" ng-model="renderUrl" ng-disabled="renderStarted">
                 </div>
-                <br/>
-                <h3>Options</h3>
+<!--                <br/>-->
+<!--                <h3>Options</h3>-->
 
-                <label for="option-renderFormat">Format</label><select class="form-control" id="option-renderFormat" ng-model="renderFormat" ng-disabled="renderStarted">
-                    <option value="svg">SVG</option>
-                    <option value="png">PNG</option>
-                    <option value="jpeg">JPEG</option>
-                </select>
-                <br/>
+<!--                <label for="option-renderFormat">Format</label><select class="form-control" id="option-renderFormat" ng-model="renderFormat" ng-disabled="renderStarted">-->
+<!--                    <option value="svg">SVG</option>-->
+<!--                    <option value="png">PNG</option>-->
+<!--                    <option value="jpeg">JPEG</option>-->
+<!--                </select>-->
+<!--                <br/>-->
 
-                <div ng-repeat="option in renderOptions">
-                    <label for="optionValue-{{option.key}}">{{option.key}}</label>
-                    <div ng-show="option.type == 'boolean'">
-                        <!--
-                        <select class="form-control" id="optionValue-{{option.key}}" ng-model="option.value" ng-disabled="renderStarted">
-                            <option value="true">true</option>
-                            <option value="false">false</option>
-                        </select>
-                        -->
-                        <input type="checkbox" id="optionValue-{{option.key}}" ng-model="option.value" ng-disabled="renderStarted">
-                    </div>
-                    <div ng-show="option.type != 'boolean'">
-                        <input class="form-control" type="{{option.type}}" id="optionValue-{{option.key}}" ng-model="option.value" ng-disabled="renderStarted">
-                    </div>
-                </div>
+<!--                <div ng-repeat="option in renderOptions">-->
+<!--                    <label for="optionValue-{{option.key}}">{{option.key}}</label>-->
+<!--                    <div ng-show="option.type == 'boolean'">-->
+<!--                        <!---->
+<!--                        <select class="form-control" id="optionValue-{{option.key}}" ng-model="option.value" ng-disabled="renderStarted">-->
+<!--                            <option value="true">true</option>-->
+<!--                            <option value="false">false</option>-->
+<!--                        </select>-->
+<!--                        -->
+<!--                        <input type="checkbox" id="optionValue-{{option.key}}" ng-model="option.value" ng-disabled="renderStarted">-->
+<!--                    </div>-->
+<!--                    <div ng-show="option.type != 'boolean'">-->
+<!--                        <input class="form-control" type="{{option.type}}" id="optionValue-{{option.key}}" ng-model="option.value" ng-disabled="renderStarted">-->
+<!--                    </div>-->
+<!--                </div>-->
 
                 <br/>
                 <button class="btn btn-success" type="submit" ng-disabled="!renderUrl || renderStarted" ng-click="startRender()">Render</button>
@@ -79,7 +82,7 @@
                 <input class="form-control" readonly ng-show="renderDirectLink && renderDirectLinkVisible" ng-model="renderDirectLink">
             </div>
 
-            <img ng-src="{{renderedImage}}" src="">
+            <img ng-src="{{renderedImage}}" src="" style="    max-width: 100%;">
         </div>
         <br/>
         <hr/>
@@ -87,6 +90,11 @@
             <h3>Metadata</h3>
             <textarea style="min-width:100%;max-width:100%;min-height:500px;">{{renderedDataString}}</textarea>
         </div>
+    </div>
+    <div>
+        <h3 id="api">API</h3>
+
+        <pre><code>https://api.webrender.co/render?url=&lt;website url&gt;</code></pre>
     </div>
 </div>
 
