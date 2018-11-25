@@ -8,7 +8,7 @@
 </head>
 <body ng-cloak>
 <div class="container-fluid">
-    <h1 class="page-header" onclick="window.location='https://webrender.ga'">WebRender
+    <h1 class="page-header" onclick="window.location='https://webrender.co'">WebRender
         <small>Take screenshots of any website</small>
     </h1>
 
