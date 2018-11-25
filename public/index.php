@@ -94,7 +94,23 @@
     <div>
         <h3 id="api">API</h3>
 
-        <pre><code>https://api.webrender.co/render?url=&lt;website url&gt;</code></pre>
+        <pre><code>https://api.webrender.co/render?url=&lt;website url&gt;&options={"optionName":"optionValue"}</code></pre>
+
+        Default Options
+        <pre><code>
+{
+    delay: 1,
+    crop: false,
+    transparent: false,
+    format: "png",
+    selector: "html",
+    hide: [],
+    width: 1920,
+    height: 1080,
+    scale: 1
+}
+            </code>
+        </pre>
     </div>
 </div>
 
