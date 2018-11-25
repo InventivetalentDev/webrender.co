@@ -23,7 +23,7 @@
         <div>
             <h2>About</h2>
 
-            This website uses <a href="http://wkhtmltopdf.org/" target="_blank"><strong>WKhtmlTOpdf</strong></a> to take screenshots of any page you specify.<br/>
+            This website can be used to take screenshots of any page you specify.<br/>
             Images are currently only stored for one hour, so please don't use direct links to this website.<br/>
             <br/>
             There's also an <a href="#api">API</a>!
